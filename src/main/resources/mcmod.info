@@ -8,8 +8,8 @@
   "url": "",
   "updateUrl": "",
   "authorList": ["Lykrast"],
-  "credits": "Extra Utilities 2 for the inspiration, MayusYT for the name",
-  "logoFile": "",
+  "credits": "Extra Utilities 2 for the inspiration, MayusYT for the name, Wouter for the awesome logo.",
+  "logoFile": "assets/glassential/textures/gui/logo.png",
   "screenshots": [],
   "dependencies": []
 }
