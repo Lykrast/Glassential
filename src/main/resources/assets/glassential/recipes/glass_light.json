@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "key": {
+    "#": { "item": "minecraft:glass" },
+    "X": { "type": "forge:ore_dict", "ore": "dustGlowstone" }
+  },
+  "result": { "item": "glassential:glass_light", "count": 8 }
+}

@@ -1,0 +1,22 @@
+{
+  "parent": "glassential:root",
+  "rewards": {
+    "recipes": [
+      "glassential:glass_light",
+      "glassential:glass_redstone",
+      "glassential:glass_dark"
+    ]
+  },
+  "criteria": {
+    "has_glass": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:glass"
+          }
+        ]
+      }
+    }
+  }
+}
