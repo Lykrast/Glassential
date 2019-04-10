@@ -1,16 +1,20 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "###",
-    "#X#",
-    "###"
-  ],
-  "key": {
-    "#": { "item": "minecraft:glass" },
-    "X": [ 
-      { "item": "minecraft:coal", "data": 0 },
-      { "item": "minecraft:coal", "data": 1 }
-    ]
-  },
-  "result": { "item": "glassential:glass_dark", "count": 8 }
+	"conditions": [{
+		"type": "minecraft:item_exists",
+		"item": "glassential:glass_dark"
+	}],
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"#X#",
+		"###"
+	],
+	"key": {
+		"#": { "item": "minecraft:glass" },
+		"X": [ 
+			{ "item": "minecraft:coal", "data": 0 },
+			{ "item": "minecraft:coal", "data": 1 }
+		]
+	},
+	"result": { "item": "glassential:glass_dark", "count": 8 }
 }

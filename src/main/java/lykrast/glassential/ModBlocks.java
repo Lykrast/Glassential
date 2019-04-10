@@ -51,20 +51,22 @@ public class ModBlocks {
 		IForgeRegistry<Block> registry = event.getRegistry();
 		itemBlocks = new ArrayList<>();
 
-		clear = registerBlock(registry, new BlockCustomGlass(), "glass_clear", CreativeTabs.BUILDING_BLOCKS);
-		light = registerBlock(registry, new BlockCustomGlass().setLightLevel(1.0F), "glass_light", CreativeTabs.BUILDING_BLOCKS);
-		redstone = registerBlock(registry, new BlockCustomGlass() {
-			@Override
-			public boolean canProvidePower(IBlockState state) {
-				return true;
-			}
-
-			@Override
-			public int getWeakPower(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side) {
-				return 15;
-			}
-		}, "glass_redstone", CreativeTabs.REDSTONE);
-		dark = registerBlock(registry, new BlockCustomGlass().setLightOpacity(255), "glass_dark", CreativeTabs.BUILDING_BLOCKS);
+		if (GlassentialConfig.clear) clear = registerBlock(registry, new BlockCustomGlass(), "glass_clear", CreativeTabs.BUILDING_BLOCKS);
+		if (GlassentialConfig.light) light = registerBlock(registry, new BlockCustomGlass().setLightLevel(1.0F), "glass_light", CreativeTabs.BUILDING_BLOCKS);
+		if (GlassentialConfig.redstone) {
+			redstone = registerBlock(registry, new BlockCustomGlass() {
+				@Override
+				public boolean canProvidePower(IBlockState state) {
+					return true;
+				}
+	
+				@Override
+				public int getWeakPower(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side) {
+					return 15;
+				}
+			}, "glass_redstone", CreativeTabs.REDSTONE);
+		}
+		if (GlassentialConfig.dark) dark = registerBlock(registry, new BlockCustomGlass().setLightOpacity(255), "glass_dark", CreativeTabs.BUILDING_BLOCKS);
 	}
 
 	@SubscribeEvent
@@ -77,15 +79,15 @@ public class ModBlocks {
 	}
 	
 	private static void registerOreDict() {
-		OreDictionary.registerOre("blockGlass", clear);
-		OreDictionary.registerOre("blockGlass", light);
-		OreDictionary.registerOre("blockGlass", redstone);
-		OreDictionary.registerOre("blockGlass", dark);
+		if (GlassentialConfig.clear) OreDictionary.registerOre("blockGlass", clear);
+		if (GlassentialConfig.light) OreDictionary.registerOre("blockGlass", light);
+		if (GlassentialConfig.redstone) OreDictionary.registerOre("blockGlass", redstone);
+		if (GlassentialConfig.dark) OreDictionary.registerOre("blockGlass", dark);
 	}
 	
 	@SubscribeEvent
 	public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
-		GameRegistry.addSmelting(Blocks.GLASS, new ItemStack(clear), 0.1F);
+		if (GlassentialConfig.clear) GameRegistry.addSmelting(Blocks.GLASS, new ItemStack(clear), 0.1F);
 	}
 
 	private static void initModel(Block b) {
@@ -99,10 +101,10 @@ public class ModBlocks {
 	@SubscribeEvent
 	@SideOnly(Side.CLIENT)
 	public static void registerModels(ModelRegistryEvent evt) {
-		initModel(clear);
-		initModel(light);
-		initModel(redstone);
-		initModel(dark);
+		if (GlassentialConfig.clear) initModel(clear);
+		if (GlassentialConfig.light) initModel(light);
+		if (GlassentialConfig.redstone) initModel(redstone);
+		if (GlassentialConfig.dark) initModel(dark);
 
 		for (Item i : itemBlocks)
 			initModel(i);
