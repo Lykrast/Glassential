@@ -1,0 +1,18 @@
+{
+	"conditions": [
+		{
+			"type": "minecraft:item_exists",
+			"item": "glassential:glass_ethereal"
+		},
+		{
+			"type": "minecraft:item_exists",
+			"item": "glassential:glass_ethereal_reverse"
+		}
+	],
+	"group": "glass_ethereal",
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{ "item": "glassential:glass_ethereal_reverse" }
+	],
+	"result": { "item": "glassential:glass_ethereal" }
+}
