@@ -2,9 +2,15 @@ tile.glassential.glass_clear.name=Verre pur
 tile.glassential.glass_light.name=Verre lumineux
 tile.glassential.glass_redstone.name=Verre de redstone
 tile.glassential.glass_dark.name=Verre sombre
+tile.glassential.glass_ghostly.name=Verre fantomatique
+tile.glassential.glass_ethereal.name=Verre éthéré
+tile.glassential.glass_ethereal_reverse.name=Verre éthéré inversé
 
 config.glassential.title=Glassential
 config.glassential.glass_clear=Activer le verre pur
 config.glassential.glass_light=Activer le verre lumineux
 config.glassential.glass_redstone=Activer le verre de redstone
 config.glassential.glass_dark=Activer le verre sombre
+config.glassential.glass_ghostly=Activer le verre fantomatique
+config.glassential.glass_ethereal=Activer le verre éthéré
+config.glassential.glass_ethereal_reverse=Activer le verre éthéré inversé
