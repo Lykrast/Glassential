@@ -3,18 +3,23 @@ package lykrast.glassential;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
@@ -28,7 +33,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 @Mod.EventBusSubscriber
 public class ModBlocks {
-	public static Block clear, light, redstone, dark;
+	public static Block clear, light, redstone, dark, ghostly, ethereal, etherealReverse;
 	private static List<Item> itemBlocks;
 
 	private static Block registerBlock(IForgeRegistry<Block> reg, Block block, String name, CreativeTabs tab) {
@@ -67,6 +72,14 @@ public class ModBlocks {
 			}, "glass_redstone", CreativeTabs.REDSTONE);
 		}
 		if (GlassentialConfig.dark) dark = registerBlock(registry, new BlockCustomGlass().setLightOpacity(255), "glass_dark", CreativeTabs.BUILDING_BLOCKS);
+		if (GlassentialConfig.ghostly) {
+			ghostly = registerBlock(registry, new BlockCustomGlass() {
+				@Override
+				public void addCollisionBoxToList(IBlockState state, World worldIn, BlockPos pos, AxisAlignedBB entityBox, List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean isActualState) {}
+			}, "glass_ghostly", CreativeTabs.BUILDING_BLOCKS);
+		}
+		if (GlassentialConfig.ethereal) ethereal = registerBlock(registry, new BlockEtherealGlass(false), "glass_ethereal", CreativeTabs.BUILDING_BLOCKS);
+		if (GlassentialConfig.etherealReverse) etherealReverse = registerBlock(registry, new BlockEtherealGlass(true), "glass_ethereal_reverse", CreativeTabs.BUILDING_BLOCKS);
 	}
 
 	@SubscribeEvent
@@ -83,6 +96,9 @@ public class ModBlocks {
 		if (GlassentialConfig.light) OreDictionary.registerOre("blockGlass", light);
 		if (GlassentialConfig.redstone) OreDictionary.registerOre("blockGlass", redstone);
 		if (GlassentialConfig.dark) OreDictionary.registerOre("blockGlass", dark);
+		if (GlassentialConfig.ghostly) OreDictionary.registerOre("blockGlass", ghostly);
+		if (GlassentialConfig.ethereal) OreDictionary.registerOre("blockGlass", ethereal);
+		if (GlassentialConfig.etherealReverse) OreDictionary.registerOre("blockGlass", etherealReverse);
 	}
 	
 	@SubscribeEvent
@@ -105,6 +121,9 @@ public class ModBlocks {
 		if (GlassentialConfig.light) initModel(light);
 		if (GlassentialConfig.redstone) initModel(redstone);
 		if (GlassentialConfig.dark) initModel(dark);
+		if (GlassentialConfig.ghostly) initModel(ghostly);
+		if (GlassentialConfig.ethereal) initModel(ethereal);
+		if (GlassentialConfig.etherealReverse) initModel(etherealReverse);
 
 		for (Item i : itemBlocks)
 			initModel(i);

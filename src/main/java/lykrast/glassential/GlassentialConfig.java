@@ -32,6 +32,21 @@ public class GlassentialConfig {
 	@LangKey("config." + Glassential.MODID + ".glass_dark")
 	@Comment("Enable Dark Glass")
 	public static boolean dark = true;
+	
+	@RequiresMcRestart
+	@LangKey("config." + Glassential.MODID + ".glass_ghostly")
+	@Comment("Enable Ghostly Glass")
+	public static boolean ghostly = true;
+	
+	@RequiresMcRestart
+	@LangKey("config." + Glassential.MODID + ".glass_ethereal")
+	@Comment("Enable Ethereal Glass")
+	public static boolean ethereal = true;
+	
+	@RequiresMcRestart
+	@LangKey("config." + Glassential.MODID + ".glass_ethereal_reverse")
+	@Comment("Enable Reverse Ethereal Glass")
+	public static boolean etherealReverse = true;
 
 	@Mod.EventBusSubscriber(modid = Glassential.MODID)
 	private static class EventHandler {
