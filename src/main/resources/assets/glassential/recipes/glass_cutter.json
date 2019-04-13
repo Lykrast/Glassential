@@ -1,0 +1,18 @@
+{
+	"conditions": [{
+		"type": "minecraft:item_exists",
+		"item": "glassential:glass_cutter_iron"
+	}],
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"  I",
+		" G ",
+		"S  "
+	],
+	"key": {
+		"I": { "type": "forge:ore_dict", "ore": "ingotIron" },
+		"G": { "type": "forge:ore_dict", "ore": "blockGlass" },
+		"S": { "type": "forge:ore_dict", "ore": "stickWood" }
+	},
+	"result": { "item": "glassential:glass_cutter_iron" }
+}

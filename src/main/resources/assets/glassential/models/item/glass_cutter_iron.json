@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "glassential:items/glass_cutter_iron"
+    }
+}

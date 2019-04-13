@@ -47,6 +47,11 @@ public class GlassentialConfig {
 	@LangKey("config." + Glassential.MODID + ".glass_ethereal_reverse")
 	@Comment("Enable Reverse Ethereal Glass")
 	public static boolean etherealReverse = true;
+	
+	@RequiresMcRestart
+	@LangKey("config." + Glassential.MODID + ".glass_cutter_iron")
+	@Comment("Enable Glass Cutter")
+	public static boolean glassCutterIron = true;
 
 	@Mod.EventBusSubscriber(modid = Glassential.MODID)
 	private static class EventHandler {

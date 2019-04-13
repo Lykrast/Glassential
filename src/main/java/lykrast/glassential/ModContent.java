@@ -31,16 +31,16 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 
-@Mod.EventBusSubscriber
-public class ModBlocks {
+@Mod.EventBusSubscriber(modid = Glassential.MODID)
+public class ModContent {
 	public static Block clear, light, redstone, dark, ghostly, ethereal, etherealReverse;
+	public static Item glassCutterIron;
 	private static List<Item> itemBlocks;
 
 	private static Block registerBlock(IForgeRegistry<Block> reg, Block block, String name, CreativeTabs tab) {
 		block.setRegistryName(name);
 		block.setTranslationKey(Glassential.MODID + "." + name);
-		if (tab != null)
-			block.setCreativeTab(tab);
+		if (tab != null) block.setCreativeTab(tab);
 
 		reg.register(block);
 
@@ -49,6 +49,16 @@ public class ModBlocks {
 		itemBlocks.add(item);
 
 		return block;
+	}
+	
+	public static Item registerItem(IForgeRegistry<Item> reg, Item item, String name, CreativeTabs tab) {
+		item.setRegistryName(name);
+		item.setTranslationKey(Glassential.MODID + "." + name);
+		if (tab != null) item.setCreativeTab(tab);
+
+		reg.register(item);
+		
+		return item;
 	}
 
 	@SubscribeEvent
@@ -87,6 +97,8 @@ public class ModBlocks {
 		IForgeRegistry<Item> reg = event.getRegistry();
 		for (Item i : itemBlocks)
 			reg.register(i);
+		
+		if (GlassentialConfig.glassCutterIron) glassCutterIron = registerItem(reg, new ItemGlassCutter(238), "glass_cutter_iron", CreativeTabs.TOOLS);
 		
 		registerOreDict();
 	}
@@ -127,9 +139,11 @@ public class ModBlocks {
 
 		for (Item i : itemBlocks)
 			initModel(i);
-		
 		//Let it be garbage collected to save a whole nothing of memory!
 		itemBlocks = null;
+		
+		if (GlassentialConfig.glassCutterIron) initModel(glassCutterIron);
+		
 	}
 
 }

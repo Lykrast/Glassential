@@ -6,6 +6,8 @@ tile.glassential.glass_ghostly.name=Verre fantomatique
 tile.glassential.glass_ethereal.name=Verre éthéré
 tile.glassential.glass_ethereal_reverse.name=Verre éthéré inversé
 
+item.glassential.glass_cutter_iron.name=Coupe-verre
+
 config.glassential.title=Glassential
 config.glassential.glass_clear=Activer le verre pur
 config.glassential.glass_light=Activer le verre lumineux
@@ -14,3 +16,4 @@ config.glassential.glass_dark=Activer le verre sombre
 config.glassential.glass_ghostly=Activer le verre fantomatique
 config.glassential.glass_ethereal=Activer le verre éthéré
 config.glassential.glass_ethereal_reverse=Activer le verre éthéré inversé
+config.glassential.glass_cutter_iron=Activer le coupe-verre
