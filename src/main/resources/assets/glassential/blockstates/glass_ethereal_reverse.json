@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "glassential:glass_ethereal_reverse" }
+        "": { "model": "glassential:block/glass_ethereal_reverse" }
     }
 }

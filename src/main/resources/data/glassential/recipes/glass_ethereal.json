@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shaped",
+    "group": "glassential_glass_ethereal",
+	"pattern": [
+		"###",
+		"#X#",
+		"###"
+	],
+	"key": {
+		"#": { "item": "minecraft:glass" },
+		"X": { "item": "minecraft:ender_eye" }
+	},
+	"result": { "item": "glassential:glass_ethereal", "count": 8 }
+}

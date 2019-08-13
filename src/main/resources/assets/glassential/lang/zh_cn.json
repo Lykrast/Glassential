@@ -1,0 +1,12 @@
+{
+    "block.glassential.glass_dark": "深色玻璃",
+    "block.glassential.glass_dark_ethereal": "深色缥缈玻璃",
+    "block.glassential.glass_dark_ethereal_reverse": "深色反向缥缈玻璃",
+    "block.glassential.glass_ethereal": "缥缈玻璃",
+    "block.glassential.glass_ethereal_reverse": "反向缥缈玻璃",
+    "block.glassential.glass_ghostly": "幽灵玻璃",
+    "block.glassential.glass_light": "发光玻璃",
+    "block.glassential.glass_redstone": "红石玻璃",
+    
+    "itemGroup.glassential.items": "Glassential"
+}

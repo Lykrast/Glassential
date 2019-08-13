@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "glassential:block/ethereal"
+        "all": "glassential:block/dark_ethereal"
     }
 }

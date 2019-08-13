@@ -1,0 +1,27 @@
+modLoader="javafml"
+loaderVersion="[28,)"
+issueTrackerURL="https://github.com/Lykrast/Glassential/issues"
+
+[[mods]]
+modId="glassential"
+version="${version}"
+displayName="Glassential"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/glassential"
+credits="Extra Utilities 2 for the inspiration, MayusYT for the name, Wouter for the awesome logo, UpcraftLP for the Fabric maintain."
+authors="Lykrast"
+description='''
+Various glasses for all your decorative needs.
+'''
+
+[[dependencies.glassential]]
+    modId="forge"
+    mandatory=true
+    versionRange="[28,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.glassential]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.14.4]"
+    ordering="NONE"
+    side="BOTH"

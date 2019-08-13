@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "glassential:glass_redstone" }
+        "": { "model": "glassential:block/glass_redstone" }
     }
 }

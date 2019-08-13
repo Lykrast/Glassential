@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shaped",
+    "group": "glassential_glass_ghostly",
+	"pattern": [
+		"###",
+		"#X#",
+		"###"
+	],
+	"key": {
+		"#": { "item": "minecraft:glass" },
+		"X": { "item": "minecraft:ender_pearl" }
+	},
+	"result": { "item": "glassential:glass_ghostly", "count": 8 }
+}

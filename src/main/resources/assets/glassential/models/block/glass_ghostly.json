@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "glassential:blocks/ghostly"
+        "all": "glassential:block/ghostly"
     }
 }
