@@ -8,7 +8,7 @@
 	],
 	"key": {
 		"#": { "item": "minecraft:glass" },
-		"X": { "item": "minecraft:redstone" }
+		"X": { "tag": "forge:dusts/redstone" }
 	},
 	"result": { "item": "glassential:glass_redstone", "count": 8 }
 }

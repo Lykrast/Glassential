@@ -8,7 +8,7 @@
 	],
 	"key": {
 		"#": { "item": "minecraft:glass" },
-		"X": { "item": "minecraft:glowstone_dust" }
+		"X": { "tag": "forge:dusts/glowstone" }
 	},
 	"result": { "item": "glassential:glass_light", "count": 8 }
 }
