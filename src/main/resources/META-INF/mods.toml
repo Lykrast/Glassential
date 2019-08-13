@@ -7,6 +7,7 @@ modId="glassential"
 version="${version}"
 displayName="Glassential"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/glassential"
+logoFile="logo.png"
 credits="Extra Utilities 2 for the inspiration, MayusYT for the name, Wouter for the awesome logo, UpcraftLP for the Fabric maintain."
 authors="Lykrast"
 description='''

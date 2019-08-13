@@ -15,7 +15,7 @@ apply plugin: 'maven-publish'
 
 version = "${project.minecraft_version}-${project.mod_version}"
 group = "lykrast.glassential" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "glassential"
+archivesBaseName = "glassential-forge"
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 
