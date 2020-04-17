@@ -20,6 +20,7 @@ public class EtherealGlassBlock extends GlassBlock {
 
     @Override
     public VoxelShape getCollisionShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
-        return context.isSneaking() == collideOnSneaking ? state.getShape(world, pos) : VoxelShapes.empty();
+    	//This was isSneaking but not mapped properly anymore it seems
+        return context.func_225581_b_() == collideOnSneaking ? state.getShape(world, pos) : VoxelShapes.empty();
     }
 }
