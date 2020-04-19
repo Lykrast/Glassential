@@ -6,13 +6,9 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import lykrast.glassential.blocks.DarkEtherealGlassBlock;
-import lykrast.glassential.blocks.DarkGlassBlock;
-import lykrast.glassential.blocks.EtherealGlassBlock;
-import lykrast.glassential.blocks.RedstoneGlassBlock;
+import lykrast.glassential.blocks.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.GlassBlock;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.BlockItem;
@@ -47,8 +43,8 @@ public class Glassential {
 				makeBlock("glass_dark_ethereal_reverse", new DarkEtherealGlassBlock(Block.Properties.from(Blocks.GLASS).doesNotBlockMovement(), true), ItemGroup.BUILDING_BLOCKS),
 				makeBlock("glass_ethereal", new EtherealGlassBlock(Block.Properties.from(Blocks.GLASS).doesNotBlockMovement(), false), ItemGroup.BUILDING_BLOCKS),
 				makeBlock("glass_ethereal_reverse", new EtherealGlassBlock(Block.Properties.from(Blocks.GLASS).doesNotBlockMovement(), true), ItemGroup.BUILDING_BLOCKS),
-				makeBlock("glass_ghostly", new GlassBlock(Block.Properties.from(Blocks.GLASS).doesNotBlockMovement()), ItemGroup.BUILDING_BLOCKS),
-				makeBlock("glass_light", new GlassBlock(Block.Properties.from(Blocks.GLASS).lightValue(15)), ItemGroup.BUILDING_BLOCKS),
+				makeBlock("glass_ghostly", new TooltipGlassBlock(Block.Properties.from(Blocks.GLASS).doesNotBlockMovement(), "tooltip.glassential.ghostly"), ItemGroup.BUILDING_BLOCKS),
+				makeBlock("glass_light", new TooltipGlassBlock(Block.Properties.from(Blocks.GLASS).lightValue(15), "tooltip.glassential.light"), ItemGroup.BUILDING_BLOCKS),
 				makeBlock("glass_redstone", new RedstoneGlassBlock(Block.Properties.from(Blocks.GLASS)), ItemGroup.REDSTONE));
 	}
 

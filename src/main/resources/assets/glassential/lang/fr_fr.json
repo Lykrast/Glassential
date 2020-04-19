@@ -8,5 +8,12 @@
     "block.glassential.glass_light": "Verre lumineux",
     "block.glassential.glass_redstone": "Verre de redstone",
 	
+    "tooltip.glassential.dark": "Bloque la lumière",
+    "tooltip.glassential.ethereal": "Non solide pour les joueurs",
+    "tooltip.glassential.ethereal_reverse": "Uniquement solide pour les joueurs",
+    "tooltip.glassential.ghostly": "Non solide pour les entités",
+    "tooltip.glassential.light": "Émet de la lumière",
+    "tooltip.glassential.redstone": "Émet un signal de redstone",
+	
     "itemGroup.glassential.items": "Glassential"
 }
