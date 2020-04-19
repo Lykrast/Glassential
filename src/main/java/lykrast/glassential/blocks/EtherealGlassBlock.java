@@ -3,7 +3,9 @@ package lykrast.glassential.blocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.GlassBlock;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.EntitySelectionContext;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
@@ -20,7 +22,7 @@ public class EtherealGlassBlock extends GlassBlock {
 
     @Override
     public VoxelShape getCollisionShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext context) {
-    	//This was isSneaking but not mapped properly anymore it seems
-        return context.func_225581_b_() == collideOnSneaking ? state.getShape(world, pos) : VoxelShapes.empty();
+    	//Ty KingLemming for finding that new way for the old behavior
+        return (context instanceof EntitySelectionContext && ((EntitySelectionContext)context).getEntity() instanceof PlayerEntity) == collideOnSneaking ? state.getShape(world, pos) : VoxelShapes.empty();
     }
 }
