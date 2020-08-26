@@ -44,7 +44,7 @@ public class Glassential {
 				makeBlock("glass_ethereal", new EtherealGlassBlock(Block.Properties.from(Blocks.GLASS).doesNotBlockMovement(), false), ItemGroup.BUILDING_BLOCKS),
 				makeBlock("glass_ethereal_reverse", new EtherealGlassBlock(Block.Properties.from(Blocks.GLASS).doesNotBlockMovement(), true), ItemGroup.BUILDING_BLOCKS),
 				makeBlock("glass_ghostly", new TooltipGlassBlock(Block.Properties.from(Blocks.GLASS).doesNotBlockMovement(), "tooltip.glassential.ghostly"), ItemGroup.BUILDING_BLOCKS),
-				makeBlock("glass_light", new TooltipGlassBlock(Block.Properties.from(Blocks.GLASS).lightValue(15), "tooltip.glassential.light"), ItemGroup.BUILDING_BLOCKS),
+				makeBlock("glass_light", new TooltipGlassBlock(Block.Properties.from(Blocks.GLASS).setLightLevel((b) -> 15), "tooltip.glassential.light"), ItemGroup.BUILDING_BLOCKS),
 				makeBlock("glass_redstone", new RedstoneGlassBlock(Block.Properties.from(Blocks.GLASS)), ItemGroup.REDSTONE));
 	}
 

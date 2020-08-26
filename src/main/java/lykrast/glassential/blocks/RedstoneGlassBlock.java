@@ -38,6 +38,8 @@ public class RedstoneGlassBlock extends GlassBlock {
 	@OnlyIn(Dist.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
 		super.addInformation(stack, worldIn, tooltip, flagIn);
-		tooltip.add((new TranslationTextComponent("tooltip.glassential.redstone")).applyTextStyle(TextFormatting.GRAY));
+		ITextComponent added = new TranslationTextComponent("tooltip.glassential.redstone");
+		added.getStyle().applyFormatting(TextFormatting.GRAY);
+		tooltip.add(added);
 	}
 }

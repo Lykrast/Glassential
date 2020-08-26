@@ -31,6 +31,8 @@ public class DarkEtherealGlassBlock extends EtherealGlassBlock {
 	@OnlyIn(Dist.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
 		super.addInformation(stack, worldIn, tooltip, flagIn);
-		tooltip.add((new TranslationTextComponent("tooltip.glassential.dark")).applyTextStyle(TextFormatting.GRAY));
+		ITextComponent added = new TranslationTextComponent("tooltip.glassential.dark");
+		added.getStyle().applyFormatting(TextFormatting.GRAY);
+		tooltip.add(added);
 	}
 }
