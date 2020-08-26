@@ -32,8 +32,6 @@ public class DarkGlassBlock extends GlassBlock {
 	@OnlyIn(Dist.CLIENT)
 	public void addInformation(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
 		super.addInformation(stack, worldIn, tooltip, flagIn);
-		ITextComponent added = new TranslationTextComponent("tooltip.glassential.dark");
-		added.getStyle().applyFormatting(TextFormatting.GRAY);
-		tooltip.add(added);
+		tooltip.add((new TranslationTextComponent("tooltip.glassential.dark")).func_240699_a_(TextFormatting.GRAY));
 	}
 }
