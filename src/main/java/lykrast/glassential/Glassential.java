@@ -8,12 +8,16 @@ import org.apache.logging.log4j.Logger;
 
 import lykrast.glassential.blocks.*;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -38,14 +42,14 @@ public class Glassential {
 	public static void registerBlocks(final RegistryEvent.Register<Block> event) {
 		blocks = new ArrayList<>();
 		blockitems = new ArrayList<>();
-		event.getRegistry().registerAll(makeBlock("glass_dark", new DarkGlassBlock(Block.Properties.from(Blocks.GLASS)), ItemGroup.BUILDING_BLOCKS),
-				makeBlock("glass_dark_ethereal", new DarkEtherealGlassBlock(Block.Properties.from(Blocks.GLASS).doesNotBlockMovement(), false), ItemGroup.BUILDING_BLOCKS),
-				makeBlock("glass_dark_ethereal_reverse", new DarkEtherealGlassBlock(Block.Properties.from(Blocks.GLASS).doesNotBlockMovement(), true), ItemGroup.BUILDING_BLOCKS),
-				makeBlock("glass_ethereal", new EtherealGlassBlock(Block.Properties.from(Blocks.GLASS).doesNotBlockMovement(), false), ItemGroup.BUILDING_BLOCKS),
-				makeBlock("glass_ethereal_reverse", new EtherealGlassBlock(Block.Properties.from(Blocks.GLASS).doesNotBlockMovement(), true), ItemGroup.BUILDING_BLOCKS),
-				makeBlock("glass_ghostly", new TooltipGlassBlock(Block.Properties.from(Blocks.GLASS).doesNotBlockMovement(), "tooltip.glassential.ghostly"), ItemGroup.BUILDING_BLOCKS),
-				makeBlock("glass_light", new TooltipGlassBlock(Block.Properties.from(Blocks.GLASS).setLightLevel((b) -> 15), "tooltip.glassential.light"), ItemGroup.BUILDING_BLOCKS),
-				makeBlock("glass_redstone", new RedstoneGlassBlock(Block.Properties.from(Blocks.GLASS)), ItemGroup.REDSTONE));
+		event.getRegistry().registerAll(makeBlock("glass_dark", new DarkGlassBlock(glassProp()), ItemGroup.BUILDING_BLOCKS),
+				makeBlock("glass_dark_ethereal", new DarkEtherealGlassBlock(glassProp().doesNotBlockMovement(), false), ItemGroup.BUILDING_BLOCKS),
+				makeBlock("glass_dark_ethereal_reverse", new DarkEtherealGlassBlock(glassProp().doesNotBlockMovement(), true), ItemGroup.BUILDING_BLOCKS),
+				makeBlock("glass_ethereal", new EtherealGlassBlock(glassProp().doesNotBlockMovement(), false), ItemGroup.BUILDING_BLOCKS),
+				makeBlock("glass_ethereal_reverse", new EtherealGlassBlock(glassProp().doesNotBlockMovement(), true), ItemGroup.BUILDING_BLOCKS),
+				makeBlock("glass_ghostly", new TooltipGlassBlock(glassProp().doesNotBlockMovement(), "tooltip.glassential.ghostly"), ItemGroup.BUILDING_BLOCKS),
+				makeBlock("glass_light", new TooltipGlassBlock(glassProp().setLightLevel((b) -> 15), "tooltip.glassential.light"), ItemGroup.BUILDING_BLOCKS),
+				makeBlock("glass_redstone", new RedstoneGlassBlock(glassProp()), ItemGroup.REDSTONE));
 	}
 
 	@SubscribeEvent
@@ -66,5 +70,22 @@ public class Glassential {
 		blocks.add(block);
 		blockitems.add(new BlockItem(block, ((new Item.Properties()).group(creativeTab))).setRegistryName(MODID, name));
 		return block;
+	}
+	
+	private static Block.Properties glassProp() {
+		//Turns out "from" doesn't copy everything that glass sets
+		return Block.Properties.from(Blocks.GLASS)
+				.setAllowsSpawn(Glassential::neverAllowSpawn)
+				.setOpaque(Glassential::isntSolid)
+				.setSuffocates(Glassential::isntSolid)
+				.setBlocksVision(Glassential::isntSolid);
+	}
+	
+	//Private predicates from Blocks, no need to AT something like that
+	private static Boolean neverAllowSpawn(BlockState state, IBlockReader reader, BlockPos pos, EntityType<?> entity) {
+		return false;
+	}
+	private static boolean isntSolid(BlockState state, IBlockReader reader, BlockPos pos) {
+		return false;
 	}
 }
