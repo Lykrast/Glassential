@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[33,)"
+loaderVersion="[34,)"
 issueTrackerURL="https://github.com/Lykrast/Glassential/issues"
 license="MIT License https://github.com/Lykrast/Glassential/blob/master/LICENSE"
 
@@ -18,12 +18,12 @@ Various glasses for all your decorative needs.
 [[dependencies.glassential]]
     modId="forge"
     mandatory=true
-    versionRange="[33,)"
+    versionRange="[34,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.glassential]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.2]"
+    versionRange="[1.16.3]"
     ordering="NONE"
     side="BOTH"
