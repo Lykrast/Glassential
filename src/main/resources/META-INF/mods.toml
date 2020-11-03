@@ -24,6 +24,6 @@ Various glasses for all your decorative needs.
 [[dependencies.glassential]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.3]"
+    versionRange="[1.16.3,]"
     ordering="NONE"
     side="BOTH"
