@@ -1,0 +1,19 @@
+{
+    "block.glassential.glass_dark": "Cristal oscuro",
+    "block.glassential.glass_dark_ethereal": "Cristal oscuro etéreo",
+    "block.glassential.glass_dark_ethereal_reverse": "Cristal oscuro etéreo reverso",
+    "block.glassential.glass_ethereal": "Cristal etéreo",
+    "block.glassential.glass_ethereal_reverse": "Cristal etéreo reverso",
+    "block.glassential.glass_ghostly": "Cristal espectral",
+    "block.glassential.glass_light": "Cristal luminoso",
+    "block.glassential.glass_redstone": "Cristal de redstone",
+	
+    "tooltip.glassential.dark": "Bloquea la luz",
+    "tooltip.glassential.ethereal": "Es intangible para los jugadores",
+    "tooltip.glassential.ethereal_reverse": "Es sólido solo para los jugadores",
+    "tooltip.glassential.ghostly": "Es intangible para las entidades",
+    "tooltip.glassential.light": "Emite luz",
+    "tooltip.glassential.redstone": "Emite una señal de redstone",
+	
+    "itemGroup.glassential.items": "Glassential"
+}
