@@ -1,14 +1,12 @@
 {
-	"type": "minecraft:crafting_shaped",
+    "type": "minecraft:crafting_shapeless",
     "group": "glassential_glass_redstone",
-	"pattern": [
-		"###",
-		"#X#",
-		"###"
-	],
-	"key": {
-		"#": { "item": "minecraft:glass" },
-		"X": { "tag": "forge:dusts/redstone" }
-	},
-	"result": { "item": "glassential:glass_redstone", "count": 8 }
+    "ingredients": [
+		{ "item": "minecraft:glass" },
+		{ "item": "minecraft:glass" },
+		{ "item": "minecraft:glass" },
+		{ "item": "minecraft:glass" },
+        { "tag": "forge:dusts/redstone" }
+    ],
+	"result": { "item": "glassential:glass_redstone", "count": 4 }
 }

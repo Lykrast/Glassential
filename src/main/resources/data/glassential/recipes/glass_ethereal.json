@@ -1,14 +1,12 @@
 {
-	"type": "minecraft:crafting_shaped",
+    "type": "minecraft:crafting_shapeless",
     "group": "glassential_glass_ethereal",
-	"pattern": [
-		"###",
-		"#X#",
-		"###"
-	],
-	"key": {
-		"#": { "item": "minecraft:glass" },
-		"X": { "item": "minecraft:ender_eye" }
-	},
-	"result": { "item": "glassential:glass_ethereal", "count": 8 }
+    "ingredients": [
+		{ "item": "minecraft:glass" },
+		{ "item": "minecraft:glass" },
+		{ "item": "minecraft:glass" },
+		{ "item": "minecraft:glass" },
+        { "item": "minecraft:ender_eye" }
+    ],
+	"result": { "item": "glassential:glass_ethereal", "count": 4 }
 }

@@ -1,7 +1,6 @@
 {
-    "block.glassential.glass_dark": "Verre sombre",
-    "block.glassential.glass_dark_ethereal": "Verre éthéré sombre",
-    "block.glassential.glass_dark_ethereal_reverse": "Verre éthéré sombre inversé",
+    "block.glassential.glass_dark_ethereal": "Verre éthéré teinté",
+    "block.glassential.glass_dark_ethereal_reverse": "Verre éthéré inversé teinté",
     "block.glassential.glass_ethereal": "Verre éthéré",
     "block.glassential.glass_ethereal_reverse": "Verre éthéré inversé",
     "block.glassential.glass_ghostly": "Verre fantomatique",

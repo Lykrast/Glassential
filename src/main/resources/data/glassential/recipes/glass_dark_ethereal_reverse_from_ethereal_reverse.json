@@ -2,13 +2,13 @@
 	"type": "minecraft:crafting_shaped",
     "group": "glassential_glass_dark_ethereal_reverse",
 	"pattern": [
-		"###",
-		"#X#",
-		"###"
+		" A ",
+		"AGA",
+		" A "
 	],
 	"key": {
-		"#": { "item": "glassential:glass_ethereal_reverse" },
-		"X": { "tag": "minecraft:coals" }
+		"G": { "item": "glassential:glass_ethereal_reverse" },
+		"A": { "item": "minecraft:amethyst_shard" }
 	},
-	"result": { "item": "glassential:glass_dark_ethereal_reverse", "count": 8 }
+	"result": { "item": "glassential:glass_dark_ethereal_reverse", "count": 2 }
 }

@@ -42,8 +42,7 @@ public class Glassential {
 	public static void registerBlocks(final RegistryEvent.Register<Block> event) {
 		blocks = new ArrayList<>();
 		blockitems = new ArrayList<>();
-		event.getRegistry().registerAll(makeBlock("glass_dark", new DarkGlassBlock(glassProp()), CreativeModeTab.TAB_BUILDING_BLOCKS),
-				makeBlock("glass_dark_ethereal", new DarkEtherealGlassBlock(glassProp().noCollission(), false), CreativeModeTab.TAB_BUILDING_BLOCKS),
+		event.getRegistry().registerAll(makeBlock("glass_dark_ethereal", new DarkEtherealGlassBlock(glassProp().noCollission(), false), CreativeModeTab.TAB_BUILDING_BLOCKS),
 				makeBlock("glass_dark_ethereal_reverse", new DarkEtherealGlassBlock(glassProp().noCollission(), true), CreativeModeTab.TAB_BUILDING_BLOCKS),
 				makeBlock("glass_ethereal", new EtherealGlassBlock(glassProp().noCollission(), false), CreativeModeTab.TAB_BUILDING_BLOCKS),
 				makeBlock("glass_ethereal_reverse", new EtherealGlassBlock(glassProp().noCollission(), true), CreativeModeTab.TAB_BUILDING_BLOCKS),
@@ -61,7 +60,7 @@ public class Glassential {
 
 	@SubscribeEvent
 	public static void clientStuff(final FMLClientSetupEvent event) {
-		blocks.forEach(b -> ItemBlockRenderTypes.setRenderLayer(b, RenderType.cutout()));
+		blocks.forEach(b -> ItemBlockRenderTypes.setRenderLayer(b, RenderType.translucent()));
 		blocks = null;
 	}
 
