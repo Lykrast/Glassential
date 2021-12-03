@@ -7,17 +7,17 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import lykrast.glassential.blocks.*;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.RenderTypeLookup;
-import net.minecraft.entity.EntityType;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -42,14 +42,14 @@ public class Glassential {
 	public static void registerBlocks(final RegistryEvent.Register<Block> event) {
 		blocks = new ArrayList<>();
 		blockitems = new ArrayList<>();
-		event.getRegistry().registerAll(makeBlock("glass_dark", new DarkGlassBlock(glassProp()), ItemGroup.TAB_BUILDING_BLOCKS),
-				makeBlock("glass_dark_ethereal", new DarkEtherealGlassBlock(glassProp().noCollission(), false), ItemGroup.TAB_BUILDING_BLOCKS),
-				makeBlock("glass_dark_ethereal_reverse", new DarkEtherealGlassBlock(glassProp().noCollission(), true), ItemGroup.TAB_BUILDING_BLOCKS),
-				makeBlock("glass_ethereal", new EtherealGlassBlock(glassProp().noCollission(), false), ItemGroup.TAB_BUILDING_BLOCKS),
-				makeBlock("glass_ethereal_reverse", new EtherealGlassBlock(glassProp().noCollission(), true), ItemGroup.TAB_BUILDING_BLOCKS),
-				makeBlock("glass_ghostly", new TooltipGlassBlock(glassProp().noCollission(), "tooltip.glassential.ghostly"), ItemGroup.TAB_BUILDING_BLOCKS),
-				makeBlock("glass_light", new TooltipGlassBlock(glassProp().lightLevel((b) -> 15), "tooltip.glassential.light"), ItemGroup.TAB_BUILDING_BLOCKS),
-				makeBlock("glass_redstone", new RedstoneGlassBlock(glassProp()), ItemGroup.TAB_REDSTONE));
+		event.getRegistry().registerAll(makeBlock("glass_dark", new DarkGlassBlock(glassProp()), CreativeModeTab.TAB_BUILDING_BLOCKS),
+				makeBlock("glass_dark_ethereal", new DarkEtherealGlassBlock(glassProp().noCollission(), false), CreativeModeTab.TAB_BUILDING_BLOCKS),
+				makeBlock("glass_dark_ethereal_reverse", new DarkEtherealGlassBlock(glassProp().noCollission(), true), CreativeModeTab.TAB_BUILDING_BLOCKS),
+				makeBlock("glass_ethereal", new EtherealGlassBlock(glassProp().noCollission(), false), CreativeModeTab.TAB_BUILDING_BLOCKS),
+				makeBlock("glass_ethereal_reverse", new EtherealGlassBlock(glassProp().noCollission(), true), CreativeModeTab.TAB_BUILDING_BLOCKS),
+				makeBlock("glass_ghostly", new TooltipGlassBlock(glassProp().noCollission(), "tooltip.glassential.ghostly"), CreativeModeTab.TAB_BUILDING_BLOCKS),
+				makeBlock("glass_light", new TooltipGlassBlock(glassProp().lightLevel((b) -> 15), "tooltip.glassential.light"), CreativeModeTab.TAB_BUILDING_BLOCKS),
+				makeBlock("glass_redstone", new RedstoneGlassBlock(glassProp()), CreativeModeTab.TAB_REDSTONE));
 	}
 
 	@SubscribeEvent
@@ -61,11 +61,11 @@ public class Glassential {
 
 	@SubscribeEvent
 	public static void clientStuff(final FMLClientSetupEvent event) {
-		blocks.forEach(b -> RenderTypeLookup.setRenderLayer(b, RenderType.cutout()));
+		blocks.forEach(b -> ItemBlockRenderTypes.setRenderLayer(b, RenderType.cutout()));
 		blocks = null;
 	}
 
-	private static Block makeBlock(String name, Block block, ItemGroup creativeTab) {
+	private static Block makeBlock(String name, Block block, CreativeModeTab creativeTab) {
 		block.setRegistryName(MODID, name);
 		blocks.add(block);
 		blockitems.add(new BlockItem(block, ((new Item.Properties()).tab(creativeTab))).setRegistryName(MODID, name));
@@ -82,10 +82,10 @@ public class Glassential {
 	}
 	
 	//Private predicates from Blocks, no need to AT something like that
-	private static Boolean neverAllowSpawn(BlockState state, IBlockReader reader, BlockPos pos, EntityType<?> entity) {
+	private static Boolean neverAllowSpawn(BlockState state, BlockGetter reader, BlockPos pos, EntityType<?> entity) {
 		return false;
 	}
-	private static boolean isntSolid(BlockState state, IBlockReader reader, BlockPos pos) {
+	private static boolean isntSolid(BlockState state, BlockGetter reader, BlockPos pos) {
 		return false;
 	}
 }
