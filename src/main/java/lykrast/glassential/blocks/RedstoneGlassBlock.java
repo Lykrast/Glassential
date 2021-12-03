@@ -25,19 +25,19 @@ public class RedstoneGlassBlock extends GlassBlock {
 	}
 
 	@Override
-	public boolean canProvidePower(BlockState state) {
+	public boolean isSignalSource(BlockState state) {
 		return true;
 	}
 
 	@Override
-	public int getWeakPower(BlockState state, IBlockReader world, BlockPos pos, Direction direction) {
+	public int getSignal(BlockState state, IBlockReader world, BlockPos pos, Direction direction) {
 		return 15;
 	}
 
 	@Override
 	@OnlyIn(Dist.CLIENT)
-	public void addInformation(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		super.addInformation(stack, worldIn, tooltip, flagIn);
-		tooltip.add((new TranslationTextComponent("tooltip.glassential.redstone")).mergeStyle(TextFormatting.GRAY));
+	public void appendHoverText(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+		super.appendHoverText(stack, worldIn, tooltip, flagIn);
+		tooltip.add((new TranslationTextComponent("tooltip.glassential.redstone")).withStyle(TextFormatting.GRAY));
 	}
 }

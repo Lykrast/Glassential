@@ -42,14 +42,14 @@ public class Glassential {
 	public static void registerBlocks(final RegistryEvent.Register<Block> event) {
 		blocks = new ArrayList<>();
 		blockitems = new ArrayList<>();
-		event.getRegistry().registerAll(makeBlock("glass_dark", new DarkGlassBlock(glassProp()), ItemGroup.BUILDING_BLOCKS),
-				makeBlock("glass_dark_ethereal", new DarkEtherealGlassBlock(glassProp().doesNotBlockMovement(), false), ItemGroup.BUILDING_BLOCKS),
-				makeBlock("glass_dark_ethereal_reverse", new DarkEtherealGlassBlock(glassProp().doesNotBlockMovement(), true), ItemGroup.BUILDING_BLOCKS),
-				makeBlock("glass_ethereal", new EtherealGlassBlock(glassProp().doesNotBlockMovement(), false), ItemGroup.BUILDING_BLOCKS),
-				makeBlock("glass_ethereal_reverse", new EtherealGlassBlock(glassProp().doesNotBlockMovement(), true), ItemGroup.BUILDING_BLOCKS),
-				makeBlock("glass_ghostly", new TooltipGlassBlock(glassProp().doesNotBlockMovement(), "tooltip.glassential.ghostly"), ItemGroup.BUILDING_BLOCKS),
-				makeBlock("glass_light", new TooltipGlassBlock(glassProp().setLightLevel((b) -> 15), "tooltip.glassential.light"), ItemGroup.BUILDING_BLOCKS),
-				makeBlock("glass_redstone", new RedstoneGlassBlock(glassProp()), ItemGroup.REDSTONE));
+		event.getRegistry().registerAll(makeBlock("glass_dark", new DarkGlassBlock(glassProp()), ItemGroup.TAB_BUILDING_BLOCKS),
+				makeBlock("glass_dark_ethereal", new DarkEtherealGlassBlock(glassProp().noCollission(), false), ItemGroup.TAB_BUILDING_BLOCKS),
+				makeBlock("glass_dark_ethereal_reverse", new DarkEtherealGlassBlock(glassProp().noCollission(), true), ItemGroup.TAB_BUILDING_BLOCKS),
+				makeBlock("glass_ethereal", new EtherealGlassBlock(glassProp().noCollission(), false), ItemGroup.TAB_BUILDING_BLOCKS),
+				makeBlock("glass_ethereal_reverse", new EtherealGlassBlock(glassProp().noCollission(), true), ItemGroup.TAB_BUILDING_BLOCKS),
+				makeBlock("glass_ghostly", new TooltipGlassBlock(glassProp().noCollission(), "tooltip.glassential.ghostly"), ItemGroup.TAB_BUILDING_BLOCKS),
+				makeBlock("glass_light", new TooltipGlassBlock(glassProp().lightLevel((b) -> 15), "tooltip.glassential.light"), ItemGroup.TAB_BUILDING_BLOCKS),
+				makeBlock("glass_redstone", new RedstoneGlassBlock(glassProp()), ItemGroup.TAB_REDSTONE));
 	}
 
 	@SubscribeEvent
@@ -61,24 +61,24 @@ public class Glassential {
 
 	@SubscribeEvent
 	public static void clientStuff(final FMLClientSetupEvent event) {
-		blocks.forEach(b -> RenderTypeLookup.setRenderLayer(b, RenderType.getCutout()));
+		blocks.forEach(b -> RenderTypeLookup.setRenderLayer(b, RenderType.cutout()));
 		blocks = null;
 	}
 
 	private static Block makeBlock(String name, Block block, ItemGroup creativeTab) {
 		block.setRegistryName(MODID, name);
 		blocks.add(block);
-		blockitems.add(new BlockItem(block, ((new Item.Properties()).group(creativeTab))).setRegistryName(MODID, name));
+		blockitems.add(new BlockItem(block, ((new Item.Properties()).tab(creativeTab))).setRegistryName(MODID, name));
 		return block;
 	}
 	
 	private static Block.Properties glassProp() {
 		//Turns out "from" doesn't copy everything that glass sets
-		return Block.Properties.from(Blocks.GLASS)
-				.setAllowsSpawn(Glassential::neverAllowSpawn)
-				.setOpaque(Glassential::isntSolid)
-				.setSuffocates(Glassential::isntSolid)
-				.setBlocksVision(Glassential::isntSolid);
+		return Block.Properties.copy(Blocks.GLASS)
+				.isValidSpawn(Glassential::neverAllowSpawn)
+				.isRedstoneConductor(Glassential::isntSolid)
+				.isSuffocating(Glassential::isntSolid)
+				.isViewBlocking(Glassential::isntSolid);
 	}
 	
 	//Private predicates from Blocks, no need to AT something like that

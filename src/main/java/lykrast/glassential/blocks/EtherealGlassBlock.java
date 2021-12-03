@@ -39,8 +39,8 @@ public class EtherealGlassBlock extends GlassBlock {
 
 	@Override
 	@OnlyIn(Dist.CLIENT)
-	public void addInformation(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-		super.addInformation(stack, worldIn, tooltip, flagIn);
-		tooltip.add((new TranslationTextComponent(collidePlayers ? "tooltip.glassential.ethereal_reverse" : "tooltip.glassential.ethereal")).mergeStyle(TextFormatting.GRAY));
+	public void appendHoverText(ItemStack stack, @Nullable IBlockReader worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+		super.appendHoverText(stack, worldIn, tooltip, flagIn);
+		tooltip.add((new TranslationTextComponent(collidePlayers ? "tooltip.glassential.ethereal_reverse" : "tooltip.glassential.ethereal")).withStyle(TextFormatting.GRAY));
 	}
 }
