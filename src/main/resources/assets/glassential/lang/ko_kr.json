@@ -1,0 +1,18 @@
+{
+    "block.glassential.glass_dark_ethereal": "차광 에테리얼 유리",
+    "block.glassential.glass_dark_ethereal_reverse": "차광 역 에테리얼 유리",
+    "block.glassential.glass_ethereal": "에테리얼 유리",
+    "block.glassential.glass_ethereal_reverse": "역 에테리얼 유리",
+    "block.glassential.glass_ghostly": "유령 유리",
+    "block.glassential.glass_light": "빛나는 유리",
+    "block.glassential.glass_redstone": "레드스톤 유리",
+	
+    "tooltip.glassential.dark": "빛을 막습니다.",
+    "tooltip.glassential.ethereal": "플레이어에게는 고체가 아닙니다.",
+    "tooltip.glassential.ethereal_reverse": "플레이어에게만 고체입니다.",
+    "tooltip.glassential.ghostly": "엔티티에게는 고체가 아닙니다.",
+    "tooltip.glassential.light": "빛을 냅니다.",
+    "tooltip.glassential.redstone": "레드스톤 신호를 냅니다.",
+	
+    "itemGroup.glassential.items": "Glassential"
+}
