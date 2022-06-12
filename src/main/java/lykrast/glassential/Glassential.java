@@ -1,28 +1,33 @@
 package lykrast.glassential;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.function.Supplier;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import lykrast.glassential.blocks.*;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.client.renderer.RenderType;
+import lykrast.glassential.blocks.DarkEtherealGlassBlock;
+import lykrast.glassential.blocks.EtherealGlassBlock;
+import lykrast.glassential.blocks.RedstoneGlassBlock;
+import lykrast.glassential.blocks.TooltipGlassBlock;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.core.BlockPos;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraftforge.event.RegistryEvent;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.registries.IForgeRegistry;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 @Mod(Glassential.MODID)
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = Glassential.MODID)
@@ -32,43 +37,33 @@ public class Glassential {
 	public static final Logger LOGGER = LogManager.getLogger();
 
 	public Glassential() {
-		// Config will have to go here one day
+		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+		BLOCKS.register(bus);
+		ITEMS.register(bus);
 	}
 
-	private static List<Block> blocks;
-	private static List<Item> blockitems;
-
-	@SubscribeEvent
-	public static void registerBlocks(final RegistryEvent.Register<Block> event) {
-		blocks = new ArrayList<>();
-		blockitems = new ArrayList<>();
-		event.getRegistry().registerAll(makeBlock("glass_dark_ethereal", new DarkEtherealGlassBlock(glassProp().noCollission(), false), CreativeModeTab.TAB_BUILDING_BLOCKS),
-				makeBlock("glass_dark_ethereal_reverse", new DarkEtherealGlassBlock(glassProp().noCollission(), true), CreativeModeTab.TAB_BUILDING_BLOCKS),
-				makeBlock("glass_ethereal", new EtherealGlassBlock(glassProp().noCollission(), false), CreativeModeTab.TAB_BUILDING_BLOCKS),
-				makeBlock("glass_ethereal_reverse", new EtherealGlassBlock(glassProp().noCollission(), true), CreativeModeTab.TAB_BUILDING_BLOCKS),
-				makeBlock("glass_ghostly", new TooltipGlassBlock(glassProp().noCollission(), "tooltip.glassential.ghostly"), CreativeModeTab.TAB_BUILDING_BLOCKS),
-				makeBlock("glass_light", new TooltipGlassBlock(glassProp().lightLevel((b) -> 15), "tooltip.glassential.light"), CreativeModeTab.TAB_BUILDING_BLOCKS),
-				makeBlock("glass_redstone", new RedstoneGlassBlock(glassProp()), CreativeModeTab.TAB_REDSTONE));
-	}
-
-	@SubscribeEvent
-	public static void registerItems(final RegistryEvent.Register<Item> event) {
-		IForgeRegistry<Item> reg = event.getRegistry();
-		blockitems.forEach(reg::register);
-		blockitems = null;
+	private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
+	private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
+	
+	static {
+		makeBlock("glass_dark_ethereal", () -> new DarkEtherealGlassBlock(glassProp().noCollission(), false), CreativeModeTab.TAB_BUILDING_BLOCKS);
+		makeBlock("glass_dark_ethereal_reverse", () -> new DarkEtherealGlassBlock(glassProp().noCollission(), true), CreativeModeTab.TAB_BUILDING_BLOCKS);
+		makeBlock("glass_ethereal", () -> new EtherealGlassBlock(glassProp().noCollission(), false), CreativeModeTab.TAB_BUILDING_BLOCKS);
+		makeBlock("glass_ethereal_reverse", () -> new EtherealGlassBlock(glassProp().noCollission(), true), CreativeModeTab.TAB_BUILDING_BLOCKS);
+		makeBlock("glass_ghostly", () -> new TooltipGlassBlock(glassProp().noCollission(), "tooltip.glassential.ghostly"), CreativeModeTab.TAB_BUILDING_BLOCKS);
+		makeBlock("glass_light", () -> new TooltipGlassBlock(glassProp().lightLevel((b) -> 15), "tooltip.glassential.light"), CreativeModeTab.TAB_BUILDING_BLOCKS);
+		makeBlock("glass_redstone", () -> new RedstoneGlassBlock(glassProp()), CreativeModeTab.TAB_REDSTONE);
 	}
 
 	@SubscribeEvent
 	public static void clientStuff(final FMLClientSetupEvent event) {
-		blocks.forEach(b -> ItemBlockRenderTypes.setRenderLayer(b, RenderType.translucent()));
-		blocks = null;
+		BLOCKS.getEntries().forEach(b -> ItemBlockRenderTypes.setRenderLayer(b.get(), RenderType.translucent()));
 	}
 
-	private static Block makeBlock(String name, Block block, CreativeModeTab creativeTab) {
-		block.setRegistryName(MODID, name);
-		blocks.add(block);
-		blockitems.add(new BlockItem(block, ((new Item.Properties()).tab(creativeTab))).setRegistryName(MODID, name));
-		return block;
+	private static RegistryObject<Block> makeBlock(String name, Supplier<Block> block, CreativeModeTab creativeTab) {
+		RegistryObject<Block> regged = BLOCKS.register(name, block);
+		ITEMS.register(name, () -> new BlockItem(regged.get(), (new Item.Properties()).tab(creativeTab)));
+		return regged;
 	}
 	
 	private static Block.Properties glassProp() {
