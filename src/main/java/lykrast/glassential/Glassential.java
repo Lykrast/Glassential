@@ -9,8 +9,6 @@ import lykrast.glassential.blocks.DarkEtherealGlassBlock;
 import lykrast.glassential.blocks.EtherealGlassBlock;
 import lykrast.glassential.blocks.RedstoneGlassBlock;
 import lykrast.glassential.blocks.TooltipGlassBlock;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
@@ -21,9 +19,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -53,11 +49,6 @@ public class Glassential {
 		makeBlock("glass_ghostly", () -> new TooltipGlassBlock(glassProp().noCollission(), "tooltip.glassential.ghostly"), CreativeModeTab.TAB_BUILDING_BLOCKS);
 		makeBlock("glass_light", () -> new TooltipGlassBlock(glassProp().lightLevel((b) -> 15), "tooltip.glassential.light"), CreativeModeTab.TAB_BUILDING_BLOCKS);
 		makeBlock("glass_redstone", () -> new RedstoneGlassBlock(glassProp()), CreativeModeTab.TAB_REDSTONE);
-	}
-
-	@SubscribeEvent
-	public static void clientStuff(final FMLClientSetupEvent event) {
-		BLOCKS.getEntries().forEach(b -> ItemBlockRenderTypes.setRenderLayer(b.get(), RenderType.translucent()));
 	}
 
 	private static RegistryObject<Block> makeBlock(String name, Supplier<Block> block, CreativeModeTab creativeTab) {
