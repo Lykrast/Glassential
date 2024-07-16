@@ -1,0 +1,18 @@
+{
+    "block.glassential.glass_dark_ethereal": 			"Gölgeli Eterik Cam",
+    "block.glassential.glass_dark_ethereal_reverse": 	"Gölgeli Ters Eterik Cam",
+    "block.glassential.glass_ethereal": 				"Eterik Cam",
+    "block.glassential.glass_ethereal_reverse": 		"Ters Eterik Cam",
+    "block.glassential.glass_ghostly": 					"Hayalet Cam",
+    "block.glassential.glass_light": 					"Aydınlık Cam",
+    "block.glassential.glass_redstone": 				"Redstone Cam",
+	
+    "tooltip.glassential.dark": 			"Işığı engeller",
+    "tooltip.glassential.ethereal": 		"Oyuncular için katı değil",
+    "tooltip.glassential.ethereal_reverse": "Sadece oyunculara katı",
+    "tooltip.glassential.ghostly": 			"Varlıklar için katı değil",
+    "tooltip.glassential.light": 			"Işık yayar",
+    "tooltip.glassential.redstone": 		"Redstone sinyali yayar",
+	
+    "itemGroup.glassential.items": "Glassential"
+}
