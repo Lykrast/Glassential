@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "group": "glassential_glass_magma",
+    "ingredients": [
+		{ "item": "minecraft:glass" },
+		{ "item": "minecraft:glass" },
+		{ "item": "minecraft:glass" },
+		{ "item": "minecraft:glass" },
+        { "item": "minecraft:magma_block" }
+    ],
+	"result": { "item": "glassential:glass_magma", "count": 4 }
+}
