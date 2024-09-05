@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "group": "glassential_glass_light_ethereal",
+    "ingredients": [
+		{ "item": "glassential:glass_light" },
+		{ "item": "glassential:glass_light" },
+		{ "item": "glassential:glass_light" },
+		{ "item": "glassential:glass_light" },
+        { "item": "minecraft:ender_eye" }
+    ],
+	"result": { "item": "glassential:glass_light_ethereal", "count": 4 }
+}

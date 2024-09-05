@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shaped",
+    "group": "glassential_glass_dark_ghostly",
+	"pattern": [
+		" A ",
+		"AGA",
+		" A "
+	],
+	"key": {
+		"G": { "item": "glassential:glass_ghostly" },
+		"A": { "item": "minecraft:amethyst_shard" }
+	},
+	"result": { "item": "glassential:glass_dark_ghostly", "count": 2 }
+}
