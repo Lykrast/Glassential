@@ -8,6 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import lykrast.glassential.blocks.DarkEtherealGlassBlock;
+import lykrast.glassential.blocks.DarkGlassBlock;
 import lykrast.glassential.blocks.EtherealGlassBlock;
 import lykrast.glassential.blocks.RedstoneGlassBlock;
 import lykrast.glassential.blocks.TooltipGlassBlock;
@@ -69,6 +70,10 @@ public class Glassential {
 		makeBlock("glass_ghostly", () -> new TooltipGlassBlock(glassProp().noCollission(), "tooltip.glassential.ghostly"));
 		makeBlock("glass_ethereal", () -> new EtherealGlassBlock(glassProp().noCollission(), false));
 		makeBlock("glass_ethereal_reverse", () -> new EtherealGlassBlock(glassProp().noCollission(), true));
+		makeBlock("glass_light_ghostly", () -> new TooltipGlassBlock(glassProp().noCollission().lightLevel((b) -> 15), "tooltip.glassential.ghostly", "tooltip.glassential.light"));
+		makeBlock("glass_light_ethereal", () -> new EtherealGlassBlock(glassProp().noCollission().lightLevel((b) -> 15), false, "tooltip.glassential.light"));
+		makeBlock("glass_light_ethereal_reverse", () -> new EtherealGlassBlock(glassProp().noCollission().lightLevel((b) -> 15), true, "tooltip.glassential.light"));
+		makeBlock("glass_dark_ghostly", () -> new DarkGlassBlock(glassProp().noCollission(), "tooltip.glassential.ghostly"));
 		makeBlock("glass_dark_ethereal", () -> new DarkEtherealGlassBlock(glassProp().noCollission(), false));
 		makeBlock("glass_dark_ethereal_reverse", () -> new DarkEtherealGlassBlock(glassProp().noCollission(), true));
 	}
