@@ -71,17 +71,17 @@ public class Glassential {
 		makeBlock("glass_ghostly", () -> new TooltipGlassBlock(ghostProp(), "tooltip.glassential.ghostly"));
 		makeBlock("glass_ethereal", () -> new EtherealGlassBlock(ghostProp(), false));
 		makeBlock("glass_ethereal_reverse", () -> new EtherealGlassBlock(ghostProp(), true));
+		makeBlock("glass_dark_ghostly", () -> new DarkGlassBlock(ghostProp(), "tooltip.glassential.ghostly"));
+		makeBlock("glass_dark_ethereal", () -> new DarkEtherealGlassBlock(ghostProp(), false));
+		makeBlock("glass_dark_ethereal_reverse", () -> new DarkEtherealGlassBlock(ghostProp(), true));
 		makeBlock("glass_light", () -> new TooltipGlassBlock(glassProp().lightLevel((b) -> 15), "tooltip.glassential.light"));
 		makeBlock("glass_light_ghostly", () -> new TooltipGlassBlock(ghostProp().lightLevel((b) -> 15), "tooltip.glassential.ghostly", "tooltip.glassential.light"));
 		makeBlock("glass_light_ethereal", () -> new EtherealGlassBlock(ghostProp().lightLevel((b) -> 15), false, "tooltip.glassential.light"));
 		makeBlock("glass_light_ethereal_reverse", () -> new EtherealGlassBlock(ghostProp().lightLevel((b) -> 15), true, "tooltip.glassential.light"));
-		makeBlock("glass_dark_ghostly", () -> new DarkGlassBlock(ghostProp(), "tooltip.glassential.ghostly"));
-		makeBlock("glass_dark_ethereal", () -> new DarkEtherealGlassBlock(ghostProp(), false));
-		makeBlock("glass_dark_ethereal_reverse", () -> new DarkEtherealGlassBlock(ghostProp(), true));
-		makeBlock("glass_magma", () -> new MagmaGlassBlock(glassProp()));
-		makeBlock("glass_magma_ghostly", () -> new MagmaGlassBlock(ghostProp()));
-		makeBlock("glass_magma_ethereal", () -> new MagmaEtherealGlassBlock(ghostProp(), false));
-		makeBlock("glass_magma_ethereal_reverse", () -> new MagmaEtherealGlassBlock(ghostProp(), true));
+		makeBlock("glass_magma", () -> new MagmaGlassBlock(glassProp().lightLevel((b) -> 3)));
+		makeBlock("glass_magma_ghostly", () -> new MagmaGlassBlock(ghostProp().lightLevel((b) -> 3), "tooltip.glassential.ghostly"));
+		makeBlock("glass_magma_ethereal", () -> new MagmaEtherealGlassBlock(ghostProp().lightLevel((b) -> 3), false));
+		makeBlock("glass_magma_ethereal_reverse", () -> new MagmaEtherealGlassBlock(ghostProp().lightLevel((b) -> 3), true));
 	}
 
 	private static RegistryObject<Block> makeBlock(String name, Supplier<Block> block) {

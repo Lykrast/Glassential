@@ -1,5 +1,4 @@
 {
-    "block.glassential.glass_light": "Verre lumineux",
     "block.glassential.glass_redstone": "Verre de redstone",
     "block.glassential.glass_ghostly": "Verre fantomatique",
     "block.glassential.glass_ethereal": "Verre éthéré",
@@ -7,16 +6,22 @@
     "block.glassential.glass_dark_ghostly": "Verre fantomatique teinté",
     "block.glassential.glass_dark_ethereal": "Verre éthéré teinté",
     "block.glassential.glass_dark_ethereal_reverse": "Verre éthéré inversé teinté",
+    "block.glassential.glass_light": "Verre lumineux",
     "block.glassential.glass_light_ghostly": "Verre fantomatique lumineux",
     "block.glassential.glass_light_ethereal": "Verre éthéré lumineux",
     "block.glassential.glass_light_ethereal_reverse": "Verre éthéré inversé lumineux",
+    "block.glassential.glass_magma": "Verre magmatique",
+    "block.glassential.glass_magma_ghostly": "Verre fantomatique magmatique",
+    "block.glassential.glass_magma_ethereal": "Verre éthéré magmatique",
+    "block.glassential.glass_magma_ethereal_reverse": "Verre éthéré inversé magmatique",
 	
-    "tooltip.glassential.dark": "Bloque la lumière",
+    "tooltip.glassential.redstone": "Émet un signal de redstone",
+    "tooltip.glassential.ghostly": "Non solide pour les entités",
     "tooltip.glassential.ethereal": "Non solide pour les joueurs",
     "tooltip.glassential.ethereal_reverse": "Uniquement solide pour les joueurs",
-    "tooltip.glassential.ghostly": "Non solide pour les entités",
+    "tooltip.glassential.dark": "Bloque la lumière",
     "tooltip.glassential.light": "Émet de la lumière",
-    "tooltip.glassential.redstone": "Émet un signal de redstone",
+    "tooltip.glassential.magma": "Chaud au toucher",
 	
     "itemGroup.glassential.items": "Glassential"
 }
