@@ -30,6 +30,11 @@ public class DarkGlassBlock extends GlassBlock {
 	}
 
 	@Override
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter world, BlockPos pos) {
+		return false;
+	}
+
+	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void appendHoverText(ItemStack stack, @Nullable BlockGetter worldIn, List<Component> tooltip, TooltipFlag flagIn) {
 		super.appendHoverText(stack, worldIn, tooltip, flagIn);

@@ -15,4 +15,9 @@ public class DarkEtherealGlassBlock extends EtherealGlassBlock {
 	public int getLightBlock(BlockState state, BlockGetter world, BlockPos pos) {
 		return world.getMaxLightLevel();
 	}
+
+	@Override
+	public boolean propagatesSkylightDown(BlockState state, BlockGetter world, BlockPos pos) {
+		return false;
+	}
 }
