@@ -1,7 +1,7 @@
 {
-    "parent": "block/cube_all",
+	"parent": "block/cube_all",
 	"render_type": "translucent",
-    "textures": {
-        "all": "glassential:block/magma_ghostly"
-    }
+	"textures": {
+		"all": "glassential:block/magma_ghostly"
+	}
 }

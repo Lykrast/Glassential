@@ -1,11 +1,11 @@
 {
-    "block.glassential.glass_dark_ethereal": "Dunkles Ätherisches Glas",
-    "block.glassential.glass_dark_ethereal_reverse": "Verkehrtes Dunkles Ätherisches Glas",
-    "block.glassential.glass_ethereal": "Ätherisches Glas",
-    "block.glassential.glass_ethereal_reverse": "Verkehrtes Ätherisches Glas",
-    "block.glassential.glass_ghostly": "Geisterhaftes Glas",
-    "block.glassential.glass_light": "Leuchtendes Glas",
-    "block.glassential.glass_redstone": "Redstone-Glas",
+	"block.glassential.glass_dark_ethereal": "Dunkles Ätherisches Glas",
+	"block.glassential.glass_dark_ethereal_reverse": "Verkehrtes Dunkles Ätherisches Glas",
+	"block.glassential.glass_ethereal": "Ätherisches Glas",
+	"block.glassential.glass_ethereal_reverse": "Verkehrtes Ätherisches Glas",
+	"block.glassential.glass_ghostly": "Geisterhaftes Glas",
+	"block.glassential.glass_light": "Leuchtendes Glas",
+	"block.glassential.glass_redstone": "Redstone-Glas",
 	
-    "itemGroup.glassential.items": "Glassential"
+	"itemGroup.glassential.items": "Glassential"
 }

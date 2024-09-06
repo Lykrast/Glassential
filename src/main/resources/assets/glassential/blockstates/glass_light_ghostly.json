@@ -1,5 +1,5 @@
 {
-    "variants": {
-        "": { "model": "glassential:block/glass_light_ghostly" }
-    }
+	"variants": {
+		"": { "model": "glassential:block/glass_light_ghostly" }
+	}
 }

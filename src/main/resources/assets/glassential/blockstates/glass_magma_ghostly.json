@@ -1,5 +1,5 @@
 {
-    "variants": {
-        "": { "model": "glassential:block/glass_magma_ghostly" }
-    }
+	"variants": {
+		"": { "model": "glassential:block/glass_magma_ghostly" }
+	}
 }

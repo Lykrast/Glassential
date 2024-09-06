@@ -1,18 +1,18 @@
 {
-    "block.glassential.glass_dark_ethereal": "Vidro Escuro Etéreo",
-    "block.glassential.glass_dark_ethereal_reverse": "Vidro Escuro Etéreo Reverso",
-    "block.glassential.glass_ethereal": "Vidro Etéreo",
-    "block.glassential.glass_ethereal_reverse": "Vidro Etéreo Reverso",
-    "block.glassential.glass_ghostly": "Vidro Fantasmagórico",
-    "block.glassential.glass_light": "Vidro Luminoso",
-    "block.glassential.glass_redstone": "Vidro Redstone",
+	"block.glassential.glass_dark_ethereal": "Vidro Escuro Etéreo",
+	"block.glassential.glass_dark_ethereal_reverse": "Vidro Escuro Etéreo Reverso",
+	"block.glassential.glass_ethereal": "Vidro Etéreo",
+	"block.glassential.glass_ethereal_reverse": "Vidro Etéreo Reverso",
+	"block.glassential.glass_ghostly": "Vidro Fantasmagórico",
+	"block.glassential.glass_light": "Vidro Luminoso",
+	"block.glassential.glass_redstone": "Vidro Redstone",
 	
-    "tooltip.glassential.dark": "Bloqueia a luz",
-    "tooltip.glassential.ethereal": "Não é sólido para os jogadores",
-    "tooltip.glassential.ethereal_reverse": "Sólido apenas para jogadores",
-    "tooltip.glassential.ghostly": "Não é sólido para entidades",
-    "tooltip.glassential.light": "Emite luz",
-    "tooltip.glassential.redstone": "Emite um sinal de redstone",
+	"tooltip.glassential.dark": "Bloqueia a luz",
+	"tooltip.glassential.ethereal": "Não é sólido para os jogadores",
+	"tooltip.glassential.ethereal_reverse": "Sólido apenas para jogadores",
+	"tooltip.glassential.ghostly": "Não é sólido para entidades",
+	"tooltip.glassential.light": "Emite luz",
+	"tooltip.glassential.redstone": "Emite um sinal de redstone",
 	
-    "itemGroup.glassential.items": "Glassential"
+	"itemGroup.glassential.items": "Glassential"
 }

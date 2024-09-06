@@ -1,18 +1,18 @@
 {
-    "block.glassential.glass_dark_ethereal": "Тёмное эфирное стекло",
-    "block.glassential.glass_dark_ethereal_reverse": "Обратное тёмное эфирное стекло",
-    "block.glassential.glass_ethereal": "Эфирное стекло",
-    "block.glassential.glass_ethereal_reverse": "Обратное эфирное стекло",
-    "block.glassential.glass_ghostly": "Призрачное стекло",
-    "block.glassential.glass_light": "Светящееся стекло",
-    "block.glassential.glass_redstone": "Редстоуновое стекло",
+	"block.glassential.glass_dark_ethereal": "Тёмное эфирное стекло",
+	"block.glassential.glass_dark_ethereal_reverse": "Обратное тёмное эфирное стекло",
+	"block.glassential.glass_ethereal": "Эфирное стекло",
+	"block.glassential.glass_ethereal_reverse": "Обратное эфирное стекло",
+	"block.glassential.glass_ghostly": "Призрачное стекло",
+	"block.glassential.glass_light": "Светящееся стекло",
+	"block.glassential.glass_redstone": "Редстоуновое стекло",
 	
-    "tooltip.glassential.dark": "Блокирует свет",
-    "tooltip.glassential.ethereal": "Пропускает игрока",
-    "tooltip.glassential.ethereal_reverse": "Не пропускает только игрока",
-    "tooltip.glassential.ghostly": "Пропускает только сущности",
-    "tooltip.glassential.light": "Излучает свет",
-    "tooltip.glassential.redstone": "Излучает сигнал редстоуна",
+	"tooltip.glassential.dark": "Блокирует свет",
+	"tooltip.glassential.ethereal": "Пропускает игрока",
+	"tooltip.glassential.ethereal_reverse": "Не пропускает только игрока",
+	"tooltip.glassential.ghostly": "Пропускает только сущности",
+	"tooltip.glassential.light": "Излучает свет",
+	"tooltip.glassential.redstone": "Излучает сигнал редстоуна",
 	
-    "itemGroup.glassential.items": "Glassential"
+	"itemGroup.glassential.items": "Glassential"
 }
