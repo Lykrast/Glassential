@@ -1,14 +1,14 @@
 {
-    "type": "minecraft:block",
-    "pools": [
-        {
-            "rolls": 1,
-            "entries": [
-                {
-                    "type": "minecraft:item",
-                    "name": "glassential:glass_dark_ethereal_reverse"
-                }
-            ]
-        }
-    ]
+	"type": "minecraft:block",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "glassential:glass_dark_ethereal_reverse"
+				}
+			]
+		}
+	]
 }

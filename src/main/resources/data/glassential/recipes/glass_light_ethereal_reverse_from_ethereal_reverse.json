@@ -1,12 +1,12 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "group": "glassential_glass_light_ethereal_reverse",
-    "ingredients": [
+	"type": "minecraft:crafting_shapeless",
+	"group": "glassential_glass_light_ethereal_reverse",
+	"ingredients": [
 		{ "item": "glassential:glass_ethereal_reverse" },
 		{ "item": "glassential:glass_ethereal_reverse" },
 		{ "item": "glassential:glass_ethereal_reverse" },
 		{ "item": "glassential:glass_ethereal_reverse" },
-        { "tag": "forge:dusts/glowstone" }
-    ],
+		{ "tag": "forge:dusts/glowstone" }
+	],
 	"result": { "item": "glassential:glass_light_ethereal_reverse", "count": 4 }
 }
