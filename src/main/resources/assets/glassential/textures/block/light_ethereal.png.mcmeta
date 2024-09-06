@@ -1,10 +1,10 @@
 {
-    "ctm": {
-        "ctm_version": 1,
-        "type": "ctm",
-        "layer": "CUTOUT",
-        "textures": [
-            "glassential:block/light_ethereal-ctm"
-        ]
-    }
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"layer": "TRANSLUCENT",
+		"textures": [
+			"glassential:block/ctm/light_ethereal"
+		]
+	}
 }

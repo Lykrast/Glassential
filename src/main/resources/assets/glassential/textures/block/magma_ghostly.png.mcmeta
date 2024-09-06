@@ -1,10 +1,10 @@
 {
-    "ctm": {
-        "ctm_version": 1,
-        "type": "ctm",
-        "layer": "CUTOUT",
-        "textures": [
-            "glassential:block/magma_ghostly-ctm"
-        ]
-    }
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"layer": "TRANSLUCENT",
+		"textures": [
+			"glassential:block/ctm/magma_ghostly"
+		]
+	}
 }

@@ -1,10 +1,10 @@
 {
-    "ctm": {
-        "ctm_version": 1,
-        "type": "ctm",
-        "layer": "TRANSLUCENT",
-        "textures": [
-            "glassential:block/redstone-ctm"
-        ]
-    }
+	"ctm": {
+		"ctm_version": 1,
+		"type": "ctm",
+		"layer": "TRANSLUCENT",
+		"textures": [
+			"glassential:block/ctm/redstone"
+		]
+	}
 }
