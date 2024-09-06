@@ -1,12 +1,12 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "group": "glassential_glass_light_ghostly",
-    "ingredients": [
+	"type": "minecraft:crafting_shapeless",
+	"group": "glassential_glass_light_ghostly",
+	"ingredients": [
 		{ "item": "glassential:glass_ghostly" },
 		{ "item": "glassential:glass_ghostly" },
 		{ "item": "glassential:glass_ghostly" },
 		{ "item": "glassential:glass_ghostly" },
-        { "tag": "forge:dusts/glowstone" }
-    ],
+		{ "tag": "forge:dusts/glowstone" }
+	],
 	"result": { "item": "glassential:glass_light_ghostly", "count": 4 }
 }

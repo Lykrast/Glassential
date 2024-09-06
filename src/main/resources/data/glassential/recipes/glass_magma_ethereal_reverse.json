@@ -1,8 +1,8 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "group": "glassential_glass_magma_ethereal_reverse",
-    "ingredients": [
-        { "item": "glassential:glass_magma_ethereal" }
-    ],
-    "result": { "item": "glassential:glass_magma_ethereal_reverse" }
+	"type": "minecraft:crafting_shapeless",
+	"group": "glassential_glass_magma_ethereal_reverse",
+	"ingredients": [
+		{ "item": "glassential:glass_magma_ethereal" }
+	],
+	"result": { "item": "glassential:glass_magma_ethereal_reverse" }
 }

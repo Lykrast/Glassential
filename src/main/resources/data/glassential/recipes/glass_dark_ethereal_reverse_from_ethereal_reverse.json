@@ -1,6 +1,6 @@
 {
 	"type": "minecraft:crafting_shaped",
-    "group": "glassential_glass_dark_ethereal_reverse",
+	"group": "glassential_glass_dark_ethereal_reverse",
 	"pattern": [
 		" A ",
 		"AGA",
