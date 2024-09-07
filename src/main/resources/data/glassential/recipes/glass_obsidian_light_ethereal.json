@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"group": "glassential_glass_obsidian_light_ethereal",
+	"ingredients": [
+		{ "item": "minecraft:glass" },
+		{ "item": "minecraft:glass" },
+		{ "item": "minecraft:glass" },
+		{ "item": "minecraft:glass" },
+		{ "tag": "forge:dusts/glowstone" },
+		{ "item": "minecraft:ender_eye" },
+		{ "tag": "forge:obsidian" }
+	],
+	"result": { "item": "glassential:glass_obsidian_light_ethereal", "count": 4 }
+}

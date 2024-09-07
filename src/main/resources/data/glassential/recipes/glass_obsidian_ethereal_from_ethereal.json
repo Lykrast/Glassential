@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"group": "glassential_glass_obsidian_ethereal",
+	"ingredients": [
+		{ "item": "glassential:glass_ethereal" },
+		{ "item": "glassential:glass_ethereal" },
+		{ "item": "glassential:glass_ethereal" },
+		{ "item": "glassential:glass_ethereal" },
+		{ "tag": "forge:obsidian" }
+	],
+	"result": { "item": "glassential:glass_obsidian_ethereal", "count": 4 }
+}

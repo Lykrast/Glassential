@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"group": "glassential_glass_obsidian_ethereal_reverse",
+	"ingredients": [
+		{ "item": "glassential:glass_obsidian_ethereal" }
+	],
+	"result": { "item": "glassential:glass_obsidian_ethereal_reverse" }
+}

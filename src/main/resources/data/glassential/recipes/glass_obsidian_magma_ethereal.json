@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"group": "glassential_glass_obsidian_magma_ethereal",
+	"ingredients": [
+		{ "item": "minecraft:glass" },
+		{ "item": "minecraft:glass" },
+		{ "item": "minecraft:glass" },
+		{ "item": "minecraft:glass" },
+		{ "item": "minecraft:magma_block" },
+		{ "item": "minecraft:ender_eye" },
+		{ "tag": "forge:obsidian" }
+	],
+	"result": { "item": "glassential:glass_obsidian_magma_ethereal", "count": 4 }
+}

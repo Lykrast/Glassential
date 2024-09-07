@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"group": "glassential_glass_obsidian_dark",
+	"ingredients": [
+		{ "item": "minecraft:tinted_glass" },
+		{ "item": "minecraft:tinted_glass" },
+		{ "item": "minecraft:tinted_glass" },
+		{ "item": "minecraft:tinted_glass" },
+		{ "item": "minecraft:tinted_glass" },
+		{ "item": "minecraft:tinted_glass" },
+		{ "item": "minecraft:tinted_glass" },
+		{ "item": "minecraft:tinted_glass" },
+		{ "tag": "forge:obsidian" }
+	],
+	"result": { "item": "glassential:glass_obsidian_dark", "count": 8 }
+}

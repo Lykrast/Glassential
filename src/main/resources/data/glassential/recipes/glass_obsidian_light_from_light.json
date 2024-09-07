@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"group": "glassential_glass_obsidian_light",
+	"ingredients": [
+		{ "item": "glassential:glass_light" },
+		{ "item": "glassential:glass_light" },
+		{ "item": "glassential:glass_light" },
+		{ "item": "glassential:glass_light" },
+		{ "tag": "forge:obsidian" }
+	],
+	"result": { "item": "glassential:glass_obsidian_light", "count": 4 }
+}

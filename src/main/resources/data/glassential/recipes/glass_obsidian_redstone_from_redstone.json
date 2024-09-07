@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"group": "glassential_glass_obsidian_redstone",
+	"ingredients": [
+		{ "item": "glassential:glass_redstone" },
+		{ "item": "glassential:glass_redstone" },
+		{ "item": "glassential:glass_redstone" },
+		{ "item": "glassential:glass_redstone" },
+		{ "tag": "forge:obsidian" }
+	],
+	"result": { "item": "glassential:glass_obsidian_redstone", "count": 4 }
+}

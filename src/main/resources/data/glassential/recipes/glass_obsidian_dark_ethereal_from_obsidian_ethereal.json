@@ -1,0 +1,14 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"group": "glassential_glass_obsidian_dark_ethereal",
+	"pattern": [
+		" A ",
+		"AGA",
+		" A "
+	],
+	"key": {
+		"G": { "item": "glassential:glass_obsidian_ethereal" },
+		"A": { "item": "minecraft:amethyst_shard" }
+	},
+	"result": { "item": "glassential:glass_obsidian_dark_ethereal", "count": 2 }
+}

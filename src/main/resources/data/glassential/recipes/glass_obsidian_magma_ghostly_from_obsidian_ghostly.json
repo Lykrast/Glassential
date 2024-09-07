@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"group": "glassential_glass_obsidian_magma_ghostly",
+	"ingredients": [
+		{ "item": "glassential:glass_obsidian_ghostly" },
+		{ "item": "glassential:glass_obsidian_ghostly" },
+		{ "item": "glassential:glass_obsidian_ghostly" },
+		{ "item": "glassential:glass_obsidian_ghostly" },
+		{ "item": "minecraft:magma_block" }
+	],
+	"result": { "item": "glassential:glass_obsidian_magma_ghostly", "count": 4 }
+}

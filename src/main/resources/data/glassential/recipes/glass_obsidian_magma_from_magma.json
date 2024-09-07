@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"group": "glassential_glass_obsidian_magma",
+	"ingredients": [
+		{ "item": "glassential:glass_magma" },
+		{ "item": "glassential:glass_magma" },
+		{ "item": "glassential:glass_magma" },
+		{ "item": "glassential:glass_magma" },
+		{ "tag": "forge:obsidian" }
+	],
+	"result": { "item": "glassential:glass_obsidian_magma", "count": 4 }
+}
