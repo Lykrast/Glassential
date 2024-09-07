@@ -11,7 +11,11 @@ import net.minecraft.world.level.block.state.BlockState;
 public class MagmaEtherealGlassBlock extends EtherealGlassBlock {
 
 	public MagmaEtherealGlassBlock(Block.Properties properties, boolean collidePlayers) {
-		super(properties, collidePlayers, "tooltip.glassential.magma");
+		this(properties, collidePlayers, null);
+	}
+
+	public MagmaEtherealGlassBlock(Block.Properties properties, boolean collidePlayers, String third) {
+		super(properties, collidePlayers, "tooltip.glassential.magma", third);
 	}
 
 	@Override

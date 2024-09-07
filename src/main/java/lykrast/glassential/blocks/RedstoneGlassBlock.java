@@ -18,9 +18,15 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class RedstoneGlassBlock extends GlassBlock {
+	private String extraTooltip;
 
 	public RedstoneGlassBlock(Block.Properties settings) {
+		this(settings, null);
+	}
+
+	public RedstoneGlassBlock(Block.Properties settings, String extraTooltip) {
 		super(settings);
+		this.extraTooltip = extraTooltip;
 	}
 
 	@Override
@@ -38,5 +44,6 @@ public class RedstoneGlassBlock extends GlassBlock {
 	public void appendHoverText(ItemStack stack, @Nullable BlockGetter worldIn, List<Component> tooltip, TooltipFlag flagIn) {
 		super.appendHoverText(stack, worldIn, tooltip, flagIn);
 		tooltip.add(Component.translatable("tooltip.glassential.redstone").withStyle(ChatFormatting.GRAY));
+		if (extraTooltip != null) tooltip.add(Component.translatable(extraTooltip).withStyle(ChatFormatting.GRAY));
 	}
 }

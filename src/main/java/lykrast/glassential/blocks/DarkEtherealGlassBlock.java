@@ -8,7 +8,11 @@ import net.minecraft.world.level.block.state.BlockState;
 public class DarkEtherealGlassBlock extends EtherealGlassBlock {
 
 	public DarkEtherealGlassBlock(Block.Properties properties, boolean collidePlayers) {
-		super(properties, collidePlayers, "tooltip.glassential.dark");
+		this(properties, collidePlayers, null);
+	}
+
+	public DarkEtherealGlassBlock(Block.Properties properties, boolean collidePlayers, String third) {
+		super(properties, collidePlayers, "tooltip.glassential.dark", third);
 	}
 
 	@Override

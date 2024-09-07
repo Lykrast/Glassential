@@ -17,11 +17,16 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class DarkGlassBlock extends GlassBlock {
-	private String extraTooltip;
+	private String extraTooltip, second;
 
 	public DarkGlassBlock(Block.Properties properties, String extraTooltip) {
+		this(properties, extraTooltip, null);
+	}
+
+	public DarkGlassBlock(Block.Properties properties, String extraTooltip, String second) {
 		super(properties);
 		this.extraTooltip = extraTooltip;
+		this.second = second;
 	}
 
 	@Override
@@ -40,5 +45,6 @@ public class DarkGlassBlock extends GlassBlock {
 		super.appendHoverText(stack, worldIn, tooltip, flagIn);
 		if (extraTooltip != null) tooltip.add(Component.translatable(extraTooltip).withStyle(ChatFormatting.GRAY));
 		tooltip.add(Component.translatable("tooltip.glassential.dark").withStyle(ChatFormatting.GRAY));
+		if (second != null) tooltip.add(Component.translatable(second).withStyle(ChatFormatting.GRAY));
 	}
 }

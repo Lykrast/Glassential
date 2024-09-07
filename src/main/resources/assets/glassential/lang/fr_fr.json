@@ -14,6 +14,24 @@
 	"block.glassential.glass_magma_ghostly": "Verre fantomatique magmatique",
 	"block.glassential.glass_magma_ethereal": "Verre éthéré magmatique",
 	"block.glassential.glass_magma_ethereal_reverse": "Verre éthéré inversé magmatique",
+
+	"block.glassential.glass_obsidian": "Verre anti-explosion",
+	"block.glassential.glass_obsidian_redstone": "Verre de redstone anti-explosion",
+	"block.glassential.glass_obsidian_ghostly": "Verre fantomatique anti-explosion",
+	"block.glassential.glass_obsidian_ethereal": "Verre éthéré anti-explosion",
+	"block.glassential.glass_obsidian_ethereal_reverse": "Verre éthéré inversé anti-explosion",
+	"block.glassential.glass_obsidian_dark": "Verre teinté anti-explosion",
+	"block.glassential.glass_obsidian_dark_ghostly": "Verre fantomatique teinté anti-explosion",
+	"block.glassential.glass_obsidian_dark_ethereal": "Verre éthéré teinté anti-explosion",
+	"block.glassential.glass_obsidian_dark_ethereal_reverse": "Verre éthéré inversé teinté anti-explosion",
+	"block.glassential.glass_obsidian_light": "Verre lumineux anti-explosion",
+	"block.glassential.glass_obsidian_light_ghostly": "Verre fantomatique lumineux anti-explosion",
+	"block.glassential.glass_obsidian_light_ethereal": "Verre éthéré lumineux anti-explosion",
+	"block.glassential.glass_obsidian_light_ethereal_reverse": "Verre éthéré inversé lumineux anti-explosion",
+	"block.glassential.glass_obsidian_magma": "Verre magmatique anti-explosion",
+	"block.glassential.glass_obsidian_magma_ghostly": "Verre fantomatique magmatique anti-explosion",
+	"block.glassential.glass_obsidian_magma_ethereal": "Verre éthéré magmatique anti-explosion",
+	"block.glassential.glass_obsidian_magma_ethereal_reverse": "Verre éthéré inversé magmatique anti-explosion",
 	
 	"tooltip.glassential.redstone": "Émet un signal de redstone",
 	"tooltip.glassential.ghostly": "Non solide pour les entités",
@@ -21,7 +39,8 @@
 	"tooltip.glassential.ethereal_reverse": "Uniquement solide pour les joueurs",
 	"tooltip.glassential.dark": "Bloque la lumière",
 	"tooltip.glassential.light": "Émet de la lumière",
-	"tooltip.glassential.magma": "Chaud au toucher",
+	"tooltip.glassential.magma": "Blesse au toucher",
+	"tooltip.glassential.obsidian": "Résiste aux explosions",
 	
 	"itemGroup.glassential.items": "Glassential"
 }

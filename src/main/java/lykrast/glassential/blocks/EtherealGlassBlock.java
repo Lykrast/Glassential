@@ -14,11 +14,15 @@ public class EtherealGlassBlock extends TooltipGlassBlock {
     private final boolean collidePlayers;
     
     public EtherealGlassBlock(Block.Properties properties, boolean collidePlayers) {
-    	this(properties, collidePlayers, null);
+    	this(properties, collidePlayers, null, null);
+    }
+    
+    public EtherealGlassBlock(Block.Properties properties, boolean collidePlayers, String second) {
+    	this(properties, collidePlayers, second, null);
     }
 
-    public EtherealGlassBlock(Block.Properties properties, boolean collidePlayers, String second) {
-        super(properties, collidePlayers ? "tooltip.glassential.ethereal_reverse" : "tooltip.glassential.ethereal", second);
+    public EtherealGlassBlock(Block.Properties properties, boolean collidePlayers, String second, String third) {
+        super(properties, collidePlayers ? "tooltip.glassential.ethereal_reverse" : "tooltip.glassential.ethereal", second, third);
         this.collidePlayers = collidePlayers;
     }
 

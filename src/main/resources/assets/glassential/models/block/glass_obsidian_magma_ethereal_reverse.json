@@ -1,0 +1,7 @@
+{
+	"parent": "block/cube_all",
+	"render_type": "translucent",
+	"textures": {
+		"all": "glassential:block/obsidian_magma_ethereal_reverse"
+	}
+}

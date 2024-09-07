@@ -14,6 +14,24 @@
 	"block.glassential.glass_magma_ghostly": "Magmatic Ghostly Glass",
 	"block.glassential.glass_magma_ethereal": "Magmatic Ethereal Glass",
 	"block.glassential.glass_magma_ethereal_reverse": "Magmatic Reverse Ethereal Glass",
+
+	"block.glassential.glass_obsidian": "Blastproof Glass",
+	"block.glassential.glass_obsidian_redstone": "Blastproof Redstone Glass",
+	"block.glassential.glass_obsidian_ghostly": "Blastproof Ghostly Glass",
+	"block.glassential.glass_obsidian_ethereal": "Blastproof Ethereal Glass",
+	"block.glassential.glass_obsidian_ethereal_reverse": "Blastproof Reverse Ethereal Glass",
+	"block.glassential.glass_obsidian_dark": "Blastproof Tinted Glass",
+	"block.glassential.glass_obsidian_dark_ghostly": "Blastproof Tinted Ghostly Glass",
+	"block.glassential.glass_obsidian_dark_ethereal": "Blastproof Tinted Ethereal Glass",
+	"block.glassential.glass_obsidian_dark_ethereal_reverse": "Blastproof Tinted Reverse Ethereal Glass",
+	"block.glassential.glass_obsidian_light": "Blastproof Luminous Glass",
+	"block.glassential.glass_obsidian_light_ghostly": "Blastproof Luminous Ghostly Glass",
+	"block.glassential.glass_obsidian_light_ethereal": "Blastproof Luminous Ethereal Glass",
+	"block.glassential.glass_obsidian_light_ethereal_reverse": "Blastproof Luminous Reverse Ethereal Glass",
+	"block.glassential.glass_obsidian_magma": "Blastproof Magmatic Glass",
+	"block.glassential.glass_obsidian_magma_ghostly": "Blastproof Magmatic Ghostly Glass",
+	"block.glassential.glass_obsidian_magma_ethereal": "Blastproof Magmatic Ethereal Glass",
+	"block.glassential.glass_obsidian_magma_ethereal_reverse": "Blastproof Magmatic Reverse Ethereal Glass",
 	
 	"tooltip.glassential.redstone": "Emits a redstone signal",
 	"tooltip.glassential.ghostly": "Not solid to entities",
@@ -21,7 +39,8 @@
 	"tooltip.glassential.ethereal_reverse": "Only solid to players",
 	"tooltip.glassential.dark": "Blocks light",
 	"tooltip.glassential.light": "Emits light",
-	"tooltip.glassential.magma": "Hot to the touch",
+	"tooltip.glassential.magma": "Hurts on contact",
+	"tooltip.glassential.obsidian": "Resists explosions",
 	
 	"itemGroup.glassential.items": "Glassential"
 }

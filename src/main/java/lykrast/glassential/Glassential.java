@@ -66,22 +66,43 @@ public class Glassential {
 		});
 	}
 	
+	private static final String GHOSTLY = "tooltip.glassential.ghostly", LIGHT = "tooltip.glassential.light", OBSIDIAN = "tooltip.glassential.obsidian";
+	
 	static {
 		makeBlock("glass_redstone", () -> new RedstoneGlassBlock(glassProp()));
-		makeBlock("glass_ghostly", () -> new TooltipGlassBlock(ghostProp(), "tooltip.glassential.ghostly"));
+		makeBlock("glass_ghostly", () -> new TooltipGlassBlock(ghostProp(), GHOSTLY));
 		makeBlock("glass_ethereal", () -> new EtherealGlassBlock(ghostProp(), false));
 		makeBlock("glass_ethereal_reverse", () -> new EtherealGlassBlock(ghostProp(), true));
-		makeBlock("glass_dark_ghostly", () -> new DarkGlassBlock(ghostProp(), "tooltip.glassential.ghostly"));
+		makeBlock("glass_dark_ghostly", () -> new DarkGlassBlock(ghostProp(), GHOSTLY));
 		makeBlock("glass_dark_ethereal", () -> new DarkEtherealGlassBlock(ghostProp(), false));
 		makeBlock("glass_dark_ethereal_reverse", () -> new DarkEtherealGlassBlock(ghostProp(), true));
-		makeBlock("glass_light", () -> new TooltipGlassBlock(glassProp().lightLevel((b) -> 15), "tooltip.glassential.light"));
-		makeBlock("glass_light_ghostly", () -> new TooltipGlassBlock(ghostProp().lightLevel((b) -> 15), "tooltip.glassential.ghostly", "tooltip.glassential.light"));
-		makeBlock("glass_light_ethereal", () -> new EtherealGlassBlock(ghostProp().lightLevel((b) -> 15), false, "tooltip.glassential.light"));
-		makeBlock("glass_light_ethereal_reverse", () -> new EtherealGlassBlock(ghostProp().lightLevel((b) -> 15), true, "tooltip.glassential.light"));
+		makeBlock("glass_light", () -> new TooltipGlassBlock(glassProp().lightLevel((b) -> 15), LIGHT));
+		makeBlock("glass_light_ghostly", () -> new TooltipGlassBlock(ghostProp().lightLevel((b) -> 15), GHOSTLY, LIGHT));
+		makeBlock("glass_light_ethereal", () -> new EtherealGlassBlock(ghostProp().lightLevel((b) -> 15), false, LIGHT));
+		makeBlock("glass_light_ethereal_reverse", () -> new EtherealGlassBlock(ghostProp().lightLevel((b) -> 15), true, LIGHT));
 		makeBlock("glass_magma", () -> new MagmaGlassBlock(glassProp().lightLevel((b) -> 3)));
-		makeBlock("glass_magma_ghostly", () -> new MagmaGlassBlock(ghostProp().lightLevel((b) -> 3), "tooltip.glassential.ghostly"));
+		makeBlock("glass_magma_ghostly", () -> new MagmaGlassBlock(ghostProp().lightLevel((b) -> 3), GHOSTLY));
 		makeBlock("glass_magma_ethereal", () -> new MagmaEtherealGlassBlock(ghostProp().lightLevel((b) -> 3), false));
 		makeBlock("glass_magma_ethereal_reverse", () -> new MagmaEtherealGlassBlock(ghostProp().lightLevel((b) -> 3), true));
+
+		makeBlock("glass_obsidian", () -> new TooltipGlassBlock(obsidian(), OBSIDIAN));
+		makeBlock("glass_obsidian_redstone", () -> new RedstoneGlassBlock(obsidian(), OBSIDIAN));
+		makeBlock("glass_obsidian_ghostly", () -> new TooltipGlassBlock(ghostbsidian(), GHOSTLY));
+		makeBlock("glass_obsidian_ethereal", () -> new EtherealGlassBlock(ghostbsidian(), false, OBSIDIAN));
+		makeBlock("glass_obsidian_ethereal_reverse", () -> new EtherealGlassBlock(ghostbsidian(), true, OBSIDIAN));
+		makeBlock("glass_obsidian_dark", () -> new DarkGlassBlock(obsidian(), null, OBSIDIAN));
+		makeBlock("glass_obsidian_dark_ghostly", () -> new DarkGlassBlock(ghostbsidian(), GHOSTLY, OBSIDIAN));
+		makeBlock("glass_obsidian_dark_ethereal", () -> new DarkEtherealGlassBlock(ghostbsidian(), false, OBSIDIAN));
+		makeBlock("glass_obsidian_dark_ethereal_reverse", () -> new DarkEtherealGlassBlock(ghostbsidian(), true, OBSIDIAN));
+		makeBlock("glass_obsidian_light", () -> new TooltipGlassBlock(obsidian().lightLevel((b) -> 15), LIGHT, OBSIDIAN));
+		makeBlock("glass_obsidian_light_ghostly", () -> new TooltipGlassBlock(ghostbsidian().lightLevel((b) -> 15), GHOSTLY, LIGHT, OBSIDIAN));
+		makeBlock("glass_obsidian_light_ethereal", () -> new EtherealGlassBlock(ghostbsidian().lightLevel((b) -> 15), false, LIGHT, OBSIDIAN));
+		makeBlock("glass_obsidian_light_ethereal_reverse", () -> new EtherealGlassBlock(ghostbsidian().lightLevel((b) -> 15), true, LIGHT, OBSIDIAN));
+		//it's a lil bit of a mess how I ordered the tooltips, hence the extra null
+		makeBlock("glass_obsidian_magma", () -> new MagmaGlassBlock(obsidian().lightLevel((b) -> 3), null, OBSIDIAN));
+		makeBlock("glass_obsidian_magma_ghostly", () -> new MagmaGlassBlock(ghostbsidian().lightLevel((b) -> 3), GHOSTLY, OBSIDIAN));
+		makeBlock("glass_obsidian_magma_ethereal", () -> new MagmaEtherealGlassBlock(ghostbsidian().lightLevel((b) -> 3), false, OBSIDIAN));
+		makeBlock("glass_obsidian_magma_ethereal_reverse", () -> new MagmaEtherealGlassBlock(ghostbsidian().lightLevel((b) -> 3), true, OBSIDIAN));
 	}
 
 	private static RegistryObject<Block> makeBlock(String name, Supplier<Block> block) {
@@ -103,6 +124,14 @@ public class Glassential {
 	
 	private static Block.Properties ghostProp() {
 		return glassProp().forceSolidOn().noCollission();
+	}
+	
+	private static Block.Properties obsidian() {
+		return glassProp().strength(0.5f, 1200);
+	}
+	
+	private static Block.Properties ghostbsidian() {
+		return ghostProp().strength(0.5f, 1200);
 	}
 	
 	//Private predicates from Blocks, no need to AT something like that
